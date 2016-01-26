@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/sort_order"
+        android:title="@string/sort_order" >
+        <menu >
+            <group android:id="@+id/sorting" android:checkableBehavior="single"
+                app:showAsAction="ifRoom">
+                <item android:id="@+id/popularity"
+                    android:title="@string/popularity"
+                    android:checked="true"
+                    />
+                <item android:id="@+id/rating"
+                    android:title="@string/rating"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>
