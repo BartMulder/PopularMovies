@@ -1,11 +1,11 @@
 package com.example.android.popularmovies;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -33,6 +34,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+
+//import android.support.v4.app.Fragment;
+
 
 /**
  * Displays grid of movie thumbnails, allows sorting by popularity or user rating.
@@ -294,6 +298,11 @@ public class MainActivityFragment extends Fragment {
 
         @Override
         protected void onPostExecute(ArrayList<Movie> movies) {
+            if (movies == null) {
+                Toast.makeText(getActivity(), R.string.unable_to_access_database, Toast.LENGTH_LONG).show();
+                return;
+            }
+
             mGridAdapter.clear();
             for (Movie m : movies)
                 mGridAdapter.add(m);

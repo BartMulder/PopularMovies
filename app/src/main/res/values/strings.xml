@@ -7,4 +7,5 @@
     <string name="title_activity_details">DetailsActivity</string>
     <string name="user_rating">User rating:</string>
     <string name="release_date">Release date:</string>
+    <string name="unable_to_access_database">Unable to access movie database</string>
 </resources>
